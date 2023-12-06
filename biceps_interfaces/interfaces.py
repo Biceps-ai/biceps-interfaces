@@ -7,7 +7,7 @@ import dataclasses_json
 @dataclasses_json.dataclass_json
 @dataclasses.dataclass
 class Progress:
-    """Descriptor of the trianing progress to inform the user."""
+    """Descriptor of the training progress to inform the user."""
 
     epoch: int
     max_epochs: int
@@ -46,7 +46,12 @@ class ComputeInfo:
     params: Dict[str, List[int]]
     num_epochs: Optional[int] = None
     stream_weights: Optional[bool] = None
-    optimizers: Optional[str] = None
+    optimizers: Optional[List[Dict[str, Any]]] = None
     lr_schedulers: Optional[str] = None
     seed: Optional[int] = None
     eval_freq: Optional[int] = None
+    client: Optional[str] = None
+    port: Optional[int] = None
+    world_size: Optional[int] = None
+    main_rank_ip: Optional[str] = None
+    main_rank_port: Optional[int] = None
