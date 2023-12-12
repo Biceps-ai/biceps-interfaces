@@ -43,15 +43,16 @@ class ComputeInfo:
     batch_size: int
     data_len: int
     use_mixed_precision: bool
-    params: Dict[str, List[int]]
+    states: Dict[str, List[int]]
     num_epochs: Optional[int] = None
-    stream_weights: Optional[bool] = None
+    resume_training: Optional[bool] = None
     optimizers: Optional[List[Dict[str, Any]]] = None
     lr_schedulers: Optional[str] = None
-    seed: Optional[int] = None
-    eval_freq: Optional[int] = None
-    client: Optional[str] = None
-    port: Optional[int] = None
-    world_size: Optional[int] = None
-    main_rank_ip: Optional[str] = None
-    main_rank_port: Optional[int] = None
+    seed: Optional[int] = None # for reproducibility
+    eval_freq: Optional[int] = None # in epochs
+    client: Optional[str] = None # ip of the customer's client
+    ports: Optional[Dict[str, int]] = None # ports of the customer's client servers
+    world_size: Optional[int] = None # number of workers
+    main_rank_ip: Optional[str] = None # ip of the main rank worker
+    main_rank_port: Optional[int] = None # port of the main rank worker
+    checkpoint_freq: Optional[int] = None # in epochs
