@@ -7,7 +7,9 @@ setup(
     authors = [
         {'name': "Niels Pichon", 'email': "niels@biceps.ai"},
     ],
+    python_requires='>=3.11,<3.12',
     install_requires=[
         "dataclasses-json>=0.6.3",
+        "torch>=2.1.2"
     ],
 )
