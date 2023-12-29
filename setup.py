@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='biceps-interfaces',
-    version='0.0.2',
+    version='0.1.0',
     authors = [
         {'name': "Niels Pichon", 'email': "niels@biceps.ai"},
     ],
