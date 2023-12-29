@@ -1,6 +1,5 @@
-import collections
 import dataclasses
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
 
 import dataclasses_json
 import torch
@@ -81,7 +80,7 @@ class ComputeInfo:
     use_mixed_precision: bool
     states: Dict[str, List[int]]
     placeholder_shapes: Dict[str, TensorDescription]
-    # scale_tensors: Dict[str, TensorDescription]
+    output_names: List[str]
     num_epochs: Optional[int] = None
     resume_training: Optional[bool] = None
     optimizers: Optional[List[Dict[str, Any]]] = None
