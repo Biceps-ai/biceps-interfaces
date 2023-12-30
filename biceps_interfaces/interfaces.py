@@ -22,12 +22,21 @@ class Progress:
 
 @dataclasses_json.dataclass_json
 @dataclasses.dataclass
+class Device:
+    """Descriptor of a device."""
+
+    name: str
+    memory: float
+
+
+@dataclasses_json.dataclass_json
+@dataclasses.dataclass
 class Identity:
     """Descriptor of the identity of the client."""
 
     machine_id: str
     uid: str = ''
-    devices: Optional[List[Dict[str, Any]]] = None
+    devices: Optional[List[Device]] = None
     remote_address: str = ''
     port: int = 0
 
